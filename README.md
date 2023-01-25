@@ -5,4 +5,5 @@ adds two commands:
 - Close Active Tab
 - Close Active TabGroup
 
-also adds two event listeners for onTabChange and on TabGroup Changed
+also adds two event listeners for onTabChange and on TabGroup Changed.
+Listeners only activate after one of the above commands is executed
