@@ -27,12 +27,8 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	let disposable1 = vscode.commands.registerCommand('tab-test.closeActiveTab', () => {
-		const activeTabGroup = tabGroups.activeTabGroup;
-		const activeTab = activeTabGroup.activeTab;
+		const activeTab = tabGroups.activeTabGroup.activeTab;
 		if (activeTab) {
-			const activeTabLabel = vscode.window.tabGroups.activeTabGroup.activeTab?.label;
-			vscode.window.showInformationMessage('Moin from tab-test! Active: ' + activeTabLabel);
-
 			tabGroups.close(activeTab);
 		}
 	});
