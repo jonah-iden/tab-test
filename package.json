@@ -24,6 +24,10 @@
       {
         "command": "tab-test.closeActiveTabGroup",
         "title": "Close Active TabGroup"
+      },
+      {
+        "command": "tab-test.showActiveTabGroup",
+        "title": "Show active tab group and tab"
       }
     ]
   },
