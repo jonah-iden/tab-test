@@ -3,7 +3,6 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 	const tabGroups = vscode.window.tabGroups;
 	tabGroups.onDidChangeTabs((e: vscode.TabChangeEvent) => {
-		vscode.window.showInformationMessage('!');
 		e.changed.forEach(t => {
 			vscode.window.showInformationMessage('Tab ' + t.label + ' changed.');
 		});
