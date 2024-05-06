@@ -10,6 +10,7 @@
     "Other"
   ],
   "activationEvents": [
+    "*",
     "onCommand:tab-test.closeActiveTabGroup",
     "onCommand:tab-test.closeActiveTab"
   ],
