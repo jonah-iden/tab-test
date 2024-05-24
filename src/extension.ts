@@ -17,21 +17,23 @@ export function activate(context: vscode.ExtensionContext) {
 	tabGroups.onDidChangeTabGroups((e: vscode.TabGroupChangeEvent) => {
 		e.changed.forEach(t => {
 			vscode.window.showInformationMessage('Tab Group with ' + t.activeTab?.label + ' changed.')
-			logTabGroup(t);
+			logTabGroup(t, 'change');
 		});
 		e.closed.forEach(t => {
 			vscode.window.showInformationMessage('Tab Group with ' + t.activeTab?.label + ' closed');
-			logTabGroup(t);
+			logTabGroup(t, 'close');
 		});
 		e.opened.forEach(t => {
 			vscode.window.showInformationMessage('Tab Group with ' + t.activeTab?.label + ' opened');
-			logTabGroup(t);
+			logTabGroup(t, 'open');
 		});
 	});
 
-	function logTabGroup(tabGroup: vscode.TabGroup) {
+	function logTabGroup(tabGroup: vscode.TabGroup, event: string) {
+		console.log('tab group event ', event);
 		console.log('active Tab ', tabGroup.activeTab?.label);
 		console.log('viewColumn ', tabGroup.viewColumn);
+		console.log('tabs ', tabGroup.tabs.map(t => t.label));
 	}
 
 	context.subscriptions.push(vscode.commands.registerCommand('tab-test.closeActiveTab', () => {
